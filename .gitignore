@@ -1,4 +1,4 @@
-*.txt
-ss
-.gitignore
-folder/
+
+__pycache__/
+scratch.py
+todo.txt
