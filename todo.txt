@@ -13,3 +13,6 @@ nie wygrywa gracz majacy 21 pkt => done
 problem kiedy wszyscy przegrywaja (wszyscy udupili)
 
 problem z tablica active  => ???
+
+
+Test czy widac
