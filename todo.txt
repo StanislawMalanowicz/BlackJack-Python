@@ -1,0 +1,15 @@
+umozliwic zagranie kilku rozgrywek w ramach jednej talii policzyc kto i ile razy wygral
+umozliwic nadanie imion
+
+
+punkty graczy sie nie zeruja => done
+nie wyswietlaj wartosci karty krupiera => done
+rozdac kart na rozpoczenie rundy => done
+pojawiaja sie dodatkowe punkty w kolejnych rundach   => done
+wygrywa zawsze ten jeden gracz, prawdopodobnie ten ktory wygral w pierwszej rundzie => done
+    nie podaje prawidlowego zwyciezcy po 1 rundzie => done
+nie wygrywa gracz majacy 21 pkt => done
+
+problem kiedy wszyscy przegrywaja (wszyscy udupili)
+
+problem z tablica active  => ???
