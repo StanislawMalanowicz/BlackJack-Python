@@ -21,7 +21,6 @@ def full_name_color(col):
         return "Diamonds"
 
 def card_value(val):
-    # print("meethot card: ", val)
     if val == "A":
         return "11"
     elif val == "K":
@@ -32,4 +31,3 @@ def card_value(val):
         return "10"
     else:
         return val
-    # return val

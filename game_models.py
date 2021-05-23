@@ -1,8 +1,6 @@
 import operator
 
 
-    
-
 def turn(players_list, passed_players_list, new_deck):
     
     for player in players_list:
@@ -25,7 +23,7 @@ def turn(players_list, passed_players_list, new_deck):
             else:
                 players_list.remove(player)
                 passed_players_list.append(player)
-                
+
         # partia krupiera
         else:
             # jesli ma mniej niz 17 punktow, niech dobierze karte
@@ -62,8 +60,6 @@ def finish_game(begin_list, new_list):
             winner_list.append(player)
    
     sorted_list = sorted(winner_list, key=operator.attrgetter("point"))
-    # sorted_list = sorted(winner_list, key= lambda i: i['point'])
-
     if sorted_list:
             return sorted_list[-1].name, final_list
     
@@ -81,8 +77,4 @@ def play_and_return_winner(players_list, passed_players_list, new_deck):
     while players_list:
         turn(players_list, passed_players_list, new_deck)
     return finish_game(players_list, passed_players_list)
-
-# problemy:
-
-# krupier prawdopodobnie pobiera karte jak ma powyzej 21 pkt!!!
 

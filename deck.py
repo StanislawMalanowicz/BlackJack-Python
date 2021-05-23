@@ -3,15 +3,9 @@ from deck_models import full_name_color, full_name_value, card_value
 
 global str
 
-# str = str(mar)
-
 
 COLORS = ['S', 'C', 'H', 'T']
 VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-
-
-    
-
 
 class Card:
 
@@ -98,38 +92,3 @@ class Deck(Hand):
 
     
 
-# card2 = BlackJackCard("A", "D")
-# card3 = BlackJackCard("K","S")
-# print(str(card2.value()))
-# card2.check_value()
-# card3.check_value()
-# print("card2.check_value()")
-
-    
-
-
-
-# jan_player = Player("Jan")
-
-# print(jan_player.name)
-# print(jan_player.cards)
-
-
-# new_hand = Hand()
-# sec_hand = Hand()
-# new_deck = Deck()
-# new_deck.populate()
-# new_deck.shuffle()
-# print(new_hand)
-# print(sec_hand)
-# new_deck.deal([new_hand, sec_hand], 3)
-# print(new_hand)
-# print(sec_hand)
-# card3 = Card("D", "Q")
-# player1 = Hand()
-# print(card2)
-# print(card2.talk_name())
-
-# print(card)
-# # print(player1.he)
-# player1.hello("jan")

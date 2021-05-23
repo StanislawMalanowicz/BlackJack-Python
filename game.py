@@ -1,45 +1,5 @@
 from deck import BlackJackCard, Deck, Player
-from game_models import turn, finish_game, play_and_return_winner
-
-# start kometarza ======================================
-
-# new_deck = Deck()
-# print(new_deck)
-# new_deck.populate( BlackJackCard)
-# new_deck.shuffle()
-# print(new_deck)
-
-# player1 = Player("Player_One")
-# player2 = Player("Player_Two")
-# dealer = Player("Dealer")
-
-# players_list = [player1, player2, dealer]
-# passed_players_list = []
-
-
-# # ▸ Rozdaj na początek wszystkim graczom i rozdającemu po 2 karty
-# new_deck.deal(players_list, 2)
-
-# player1.update_score()
-# player2.update_score()
-
-# # ▸ Dla każdego gracza
-#     # ▸ Dopóki gracz prosi o dodatkową kartę i nie ma fury
-# while players_list:
-#     print("players in game: ")
-#     for player in players_list:
-#         print(player.name)
-#     turn(players_list, passed_players_list, new_deck)
-        
-
-# koniec kometarza ======================================
-
-# # ▸ Jeśli nie ma już graczy pozostających w grze
-# finish_game(players_list, passed_players_list)
-
-    # ▸ Pokaż karty rozdającego, gracze przegrywają
-
-
+from game_models import  play_and_return_winner
 
 
 
@@ -50,7 +10,6 @@ class Game:
         self.passed_players = []
         self.players_scoreboard = {}
 
-        # pass
     def start_game(self):
         number_of_players = int(input("podaj liczbe graczy <1-6>"))
 
@@ -117,31 +76,3 @@ new_game.show_scoreboard()
 print("liczba zagranych rund: ", new_game.turn_counter)
 
 
-
-
-
-# ▸ W przeciwnym razie
-
-    # ▸ Dopóki rozdający musi dobierać karty i nie ma fury
-
-        # ▸ Wydaj rozdającemu dodatkową kartę
-
-    # ▸ Jeśli rozdający ma furę
-
-        # ▸ Dla każdego gracza pozostającego w grze
-
-            # ▸ Gracz wygrywa
-
-    # ▸ W przeciwnym razie
-
-        # ▸ Dla każdego gracza pozostającego w grze
-
-            # ▸ Jeśli suma punktów gracza jest większa niż suma punktów rozdającego
-
-                # ▸ Gracz wygrywa
-
-            # ▸ W przeciwnym razie, jeśli suma gracza jest mniejsza niż suma rozdającego
-
-                # ▸ Gracz przegrywa
-            # ▸ W przeciwnym razie
-                # ▸ Gracz remisuje
