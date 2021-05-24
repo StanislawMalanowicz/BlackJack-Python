@@ -8,7 +8,7 @@ def turn(players_list, passed_players_list, new_deck):
         # partia gracza
         if player.name != "Dealer":
             print(f"\n -------------\n\n Punkty gracza {player.name} : {player.point}")
-            pick_card = input(f"Fraczu {player.name}: Chcesz dobrac karte? \n <y> - tak")
+            pick_card = input(f"Graczu {player.name}: Chcesz dobrac karte? \n <y> - tak")
 
             # ▸ Wydaj graczowi dodatkową kartę
             if pick_card == "y":
@@ -16,7 +16,7 @@ def turn(players_list, passed_players_list, new_deck):
 
                 # sprawdz czy gracz nie ma fury
                 if player.point > 21:
-                    print(f"Punkty gracza: {player.name} ({player.point} pkt.) przekryczyly dozwolone 21")
+                    print(f"Punkty gracza: {player.name} ({player.point} pkt.) przekroczyly dozwolone 21")
                     print("Przegrywasz")
                     players_list.remove(player)
                     passed_players_list.append(player)
