@@ -1,8 +1,6 @@
 from random import shuffle
 from deck_models import full_name_color, full_name_value, card_value
 
-global str
-
 
 COLORS = ['S', 'C', 'H', 'T']
 VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']

@@ -31,10 +31,12 @@ class Game:
         new_deck = Deck()
         new_deck.populate(BlackJackCard)
         new_deck.shuffle()
+        minimum_cards = len(self.active_players) * 3
         
         while want_to_play == "y":
             print("Game in progres...")
             print("less cards in deck: ", new_deck.other_cards())
+
             for player in self.active_players:
                 player.clear()
 
@@ -57,6 +59,11 @@ class Game:
                 player.reset_score()
 
             want_to_play = input("Czy chcesz zagrac jeszcze raz? \n  <y> - tak " )
+            if new_deck.other_cards() < minimum_cards:
+                not_enough_cards = input("Koncza sie karty jak wcisniesz Enter to dobiore, zostalo: niewiele")
+                new_deck.cards = []
+                new_deck.populate(BlackJackCard)
+                new_deck.shuffle()
         print("Koniec, dzieki za gre")
 
     def show_players(self):
