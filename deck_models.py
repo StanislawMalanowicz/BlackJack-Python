@@ -20,6 +20,7 @@ def full_name_color(col):
     elif col == "D":
         return "Diamonds"
 
+# dodac dane o aktualnej punktacji gracza:
 def card_value(val):
     if val == "A":
         return "11"
@@ -31,3 +32,30 @@ def card_value(val):
         return "10"
     else:
         return val
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# trash
+  # if player_points <= 10:
+        #     print("punkty gracza: ", player_points)
+        #     print("THIS IS big ACE: ")
+        #     return "11"
+        # else:
+        #     print("punkty gracza: ", player_points)
+        #     print("THIS IS small ACE: ")
+        #     return "1"

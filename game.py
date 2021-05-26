@@ -1,6 +1,7 @@
 from deck import Game
 
 
+# new_game = Game(test_for_aces=True)
 new_game = Game()
 new_game.start_game()
 new_game.play()

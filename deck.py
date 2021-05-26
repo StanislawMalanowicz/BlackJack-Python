@@ -25,6 +25,7 @@ class BlackJackCard(Card):
 
     def check_value(self):
         card_val = card_value(self.value)
+        # self.card_val = card_val
         return int(card_val)
 
 
@@ -41,7 +42,6 @@ class Hand:
             for card in self.cards:
                 cards += f"{card}, "
             return cards
-    
     
     def add(self, card):
         self.cards.append(card)
@@ -60,12 +60,22 @@ class Player(Hand):
         super().__init__()
         self.name = name
         self.point = 0
-    
+
+    # ponizsza metoda jest zjebana prawdopodobnie
     def update_score(self):
+        points = 0
+        for card in self.cards:
+            points += card.check_value()
+        # before_update_points = self.point
         if self.cards:
             self.point = 0
             for card in self.cards:
                 self.point += card.check_value()
+
+    def add(self, card):
+        super().add(card)
+        self.update_score()
+
     def reset_score(self):
         self.point = 0
 
@@ -85,7 +95,7 @@ class Deck(Hand):
             for hand in hands_list:
                 card = self.cards.pop()
                 hand.add(card)
-                hand.update_score()
+                # hand.update_score()
 
     def other_cards(self):
         return len(self.cards)
@@ -93,11 +103,13 @@ class Deck(Hand):
     
 
 class Game:
-    def __init__(self):
+
+    def __init__(self, test_for_aces=False):
         self.active_players = []
         self.turn_counter = 0
         self.passed_players = []
         self.players_scoreboard = {}
+        self.test_for_aces = test_for_aces
 
     def start_game(self):
         number_of_players = int(input("podaj liczbe graczy <1-6>"))
@@ -105,11 +117,11 @@ class Game:
         for x in range(0, number_of_players):
             player_name = input(f"podaj imie gracza nr {x}")
             player = Player(player_name)
-            player.update_score()
+            # player.update_score()
             self.active_players.append(player)
 
         dealer = Player("Dealer")
-        dealer.update_score()
+        # dealer.update_score()
         self.active_players.append(dealer)
 
         for player in self.active_players:
@@ -130,6 +142,10 @@ class Game:
                 player.clear()
 
             new_deck.deal(self.active_players, 2)
+            
+            # test
+            if self.test_for_aces:
+                self.active_players[0].cards[0] = BlackJackCard('A', 'S')
 
             self.turn_counter += 1
             winner, players_list = play_and_return_winner(self.active_players, self.passed_players, new_deck)
@@ -148,6 +164,8 @@ class Game:
                 player.reset_score()
 
             want_to_play = input("Czy chcesz zagrac jeszcze raz? \n  <y> - tak " )
+
+            ## dobieranie kart w przypadku ich zbyt malej ilosci
             if new_deck.other_cards() < minimum_cards:
                 not_enough_cards = input("Koncza sie karty jak wcisniesz Enter to dobiore, zostalo: niewiele")
                 new_deck.cards = []
